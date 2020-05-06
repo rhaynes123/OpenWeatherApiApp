@@ -10,18 +10,23 @@ import XCTest
 @testable import DetroitLabsWeatherAppiOS
 
 class DetroitLabsWeatherAppiOSTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    let apiKey = "11d190b14006127cf0e41d6868e79aff"
+    
+    func testApiKeyIsCorrect(){
+        let controller = ViewController()
+        
+        let key = controller.apiKey
+        
+        XCTAssertEqual(key, apiKey)
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testAJsonReturnsDetroit(){
+       
+        let state = "MI"
+        let city = "Detroit"
+        let country = "USA"
+        let  apiUrlString = "http://api.openweathermap.org/data/2.5/weather?q=\(city),\(state),\(country)&units=imperial&APPID=\(apiKey)"
+       
+        XCTAssertEqual(apiUrlString, "http://api.openweathermap.org/data/2.5/weather?q=Detroit,MI,USA&units=imperial&APPID=11d190b14006127cf0e41d6868e79aff")
     }
 
     func testPerformanceExample() throws {

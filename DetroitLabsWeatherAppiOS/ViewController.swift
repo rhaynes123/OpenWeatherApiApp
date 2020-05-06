@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var WeatherTypeLabel: UILabel!
     @IBOutlet weak var TemperatureLabel: UILabel!
@@ -24,18 +24,18 @@ class ViewController: UIViewController {
     var apiUrlString = String()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //GetWeatherJson(resourceUrl: apiUrlString)
-       
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func ViewWeatherBtn(_ sender: Any) {
         state = StateTextField.text!
         city = CityTextField.text!
         country = CountryTextField.text!
-        apiUrlString = "http://api.openweathermap.org/data/2.5/weather?q=\(city),\(state),\(country)&APPID=\(apiKey)"
+        apiUrlString = "http://api.openweathermap.org/data/2.5/weather?q=\(city),\(state),\(country)&units=imperial&APPID=\(apiKey)"
         GetWeatherJson(resourceUrl: apiUrlString)
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     func getWeather(weather: String?, description: String?,temp: Int){
         TemperatureLabel.text = "\(temp)"
@@ -47,7 +47,7 @@ class ViewController: UIViewController {
         guard let apiUrl = URL(string: resourceUrl) else{return}
         
         let newtask = URLSession.shared.dataTask(with: apiUrl){ (data,response,error) in
-               if let data = data, error == nil{
+               if let data = data{
                    do{
                        guard let weatherjson = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as?[String : Any] else{return}
                        guard let responseDetails = weatherjson["weather"] as? [[String : Any]],let responseMain = weatherjson["main"]as?[String : Any] else {return}
@@ -58,7 +58,7 @@ class ViewController: UIViewController {
                        }
                    }
                    catch{
-                    
+                    print("Some Error happened in GetWeatherJson")
                 }
                 
             }
