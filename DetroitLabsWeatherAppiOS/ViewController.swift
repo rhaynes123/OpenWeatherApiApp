@@ -12,7 +12,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var WeatherTypeLabel: UILabel!
     @IBOutlet weak var TemperatureLabel: UILabel!
-    @IBOutlet weak var LocationLabel: UILabel!
     @IBOutlet weak var CityTextField: UITextField!
     @IBOutlet weak var StateTextField: UITextField!
     @IBOutlet weak var CountryTextField: UITextField!

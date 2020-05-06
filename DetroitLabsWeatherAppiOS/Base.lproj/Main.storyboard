@@ -60,6 +60,16 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="2rT-Hr-coF"/>
                                 </connections>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Country" borderStyle="roundedRect" placeholder="USA" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b5u-Yn-K9l">
+                                <rect key="frame" x="281" y="481" width="113" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="gPv-ER-TD4"/>
+                                </connections>
+                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Weather" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GwU-7c-BgT">
                                 <rect key="frame" x="13" y="206" width="366" height="43"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
@@ -92,16 +102,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Country" borderStyle="roundedRect" placeholder="USA" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b5u-Yn-K9l">
-                                <rect key="frame" x="281" y="481" width="113" height="34"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="gPv-ER-TD4"/>
-                                </connections>
-                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIO-Ds-iil">
+                                <rect key="frame" x="220" y="262" width="13" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -112,9 +118,11 @@
                             <constraint firstItem="vIN-TC-Ddb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="9" id="CKR-su-X3Z"/>
                             <constraint firstItem="gIq-8W-IDs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="7" id="Crl-DM-Uba"/>
                             <constraint firstItem="jCU-JS-pwc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Dp0-LQ-cO9"/>
+                            <constraint firstItem="FIO-Ds-iil" firstAttribute="trailing" secondItem="kRF-IL-fqX" secondAttribute="trailing" constant="-12" id="HrG-bx-sg4"/>
                             <constraint firstItem="GwU-7c-BgT" firstAttribute="top" secondItem="jCU-JS-pwc" secondAttribute="bottom" constant="8" symbolic="YES" id="HyS-nY-dWV"/>
                             <constraint firstItem="exY-kR-Ybk" firstAttribute="top" secondItem="vIN-TC-Ddb" secondAttribute="bottom" constant="45" id="KXc-j8-gZ5"/>
                             <constraint firstItem="jCU-JS-pwc" firstAttribute="top" secondItem="gIq-8W-IDs" secondAttribute="bottom" constant="1" id="Kap-TH-hDD"/>
+                            <constraint firstItem="FIO-Ds-iil" firstAttribute="top" secondItem="GwU-7c-BgT" secondAttribute="bottom" constant="13" id="OpA-ty-Yxr"/>
                             <constraint firstItem="FuP-Mk-lRo" firstAttribute="centerX" secondItem="90A-tn-bKc" secondAttribute="centerX" id="Ot3-6f-ptk"/>
                             <constraint firstItem="jCU-JS-pwc" firstAttribute="leading" secondItem="90A-tn-bKc" secondAttribute="leading" id="Ueh-7q-3ud"/>
                             <constraint firstItem="gIq-8W-IDs" firstAttribute="leading" secondItem="GwU-7c-BgT" secondAttribute="leading" id="Vds-Mg-yh0"/>
